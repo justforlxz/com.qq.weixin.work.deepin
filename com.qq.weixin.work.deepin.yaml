@@ -3,7 +3,7 @@ branch: 5.0.0
 runtime: com.deepin.wine.Platform//5.0.0
 runtime-version: '18.08'
 sdk: org.freedesktop.Sdk/i386
-command: /opt/apps/com.qq.weixin.work.deepin/files/run.sh
+command: run.sh
 finish-args:
   - --share=network
   - --share=ipc
@@ -26,3 +26,5 @@ modules:
         sha256: fec36dedc5cb2a69e72a0659d76d823e7647b7c52d1abc2cdf8e548231a86a8c
       - type: file
         path: ./install.sh
+      - type: file
+        path: ./run.sh

@@ -5,6 +5,10 @@ for _deb in $(ls *.deb); do
     ar p "$_deb" data.tar.xz | tar -xJ
 done
 
-cp -a opt /
+cp -a opt/apps/com.qq.weixin.work.deepin/* /app/
+
+mkdir /app/bin
+cp run.sh /app/bin
+chmod a+x /app/bin/run.sh
 
 echo "Done"

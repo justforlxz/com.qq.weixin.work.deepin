@@ -15,6 +15,6 @@ flatpak-builder --repo=repo .build com.qq.weixin.work.deepin.yaml
 ## 安装运行时
 
 ```shell
-flatpak remote-add --user --no-gpg-verify deepin-wine ./repo
-flatpak install --user deepin-wine com.qq.weixin.work.deepin
+flatpak remote-add --user --no-gpg-verify deepin-wine-apps ./repo
+flatpak install --user deepin-wine-apps com.qq.weixin.work.deepin
 ```
