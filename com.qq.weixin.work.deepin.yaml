@@ -1,9 +1,9 @@
 id: com.qq.weixin.work.deepin
 branch: 5.0.0
-runtime: com.deepin.wine.Platform//5.0.0
-runtime-version: '18.08'
-sdk: org.freedesktop.Sdk/i386
-command: run.sh
+runtime: com.deepin.wine.Platform
+runtime-version: '5.0.0'
+sdk: com.deepin.wine.Sdk
+command: /app/bin/run.sh
 finish-args:
   - --share=network
   - --share=ipc
@@ -22,9 +22,7 @@ modules:
     cleanup: []
     sources:
       - type: file
-        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/com.qq.weixin.work.deepin_3.1.6.3605deepin6_i386.deb
-        sha256: fec36dedc5cb2a69e72a0659d76d823e7647b7c52d1abc2cdf8e548231a86a8c
+        url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/com.qq.weixin.work.deepin.zip
+        sha256: 2202beb6b1b51defb32a17167d5f5ca608995349b3352959df2786b483603c93
       - type: file
         path: ./install.sh
-      - type: file
-        path: ./run.sh
