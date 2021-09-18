@@ -32,8 +32,7 @@ modules:
     cleanup: []
     sources:
       - type: file
-        url: file:///home/lxz/Downloads/tmp/com.qq.weixin.work.deepin/com.qq.weixin.work.deepin_3.1.12.6001deepin8_i386.deb
-#        url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/com.qq.weixin.work.deepin.tar.xz
+        url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/com.qq.weixin.work.deepin_3.1.12.6001deepin8_i386.deb
         sha256: 2898ebcc9b6081f41ebf9736fc2ae2e0f81d0ada0d88cc4792f22b2f145a87da
       - type: file
         url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/patch.0
