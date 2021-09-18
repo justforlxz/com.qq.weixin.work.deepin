@@ -37,5 +37,3 @@ modules:
       - type: file
         url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/patch.0
         sha256: 96ec4305270c767db6ec81ef36ee068c219ac6cd0aac40c30699ea59726cc7fb
-      - type: file
-        path: ./install.sh
