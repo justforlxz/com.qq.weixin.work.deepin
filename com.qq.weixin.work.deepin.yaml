@@ -1,8 +1,8 @@
 id: com.qq.weixin.work.deepin
 branch: 5.0.0
-runtime: com.deepin.wine.Platform
+runtime: com.deepin.wine.Platform/i386
 runtime-version: '5.0.0'
-sdk: com.deepin.wine.Sdk
+sdk: com.deepin.wine.Sdk/i386
 command: /app/bin/run.sh
 finish-args:
   - --share=network
@@ -18,11 +18,25 @@ modules:
   - name: com.qq.weixin.work.deepin
     buildsystem: simple
     build-commands:
-      - ./install.sh
+      - echo 'Extra files'
+      - ar p com.qq.weixin.work.deepin_3.1.12.6001deepin8_i386.deb data.tar.xz | tar -xJ
+      - sed -i "s/\/opt\/apps\/\$DEB_PACKAGE_NAME/\/app/g" `grep "/opt/apps/$DEB_PACKAGE_NAME" -rl opt`
+      - sed -i "s/\/opt/\/usr/g" `grep /opt -rl opt`
+      - echo 'Extra Done'
+    post-install:
+      - cp -dr opt/apps/com.qq.weixin.work.deepin/entries /app/
+      - cp -dr opt/apps/com.qq.weixin.work.deepin/files /app/
+      - cp -dr opt/apps/com.qq.weixin.work.deepin/info /app/
+      - mkdir /app/bin/
+      - cp /app/files/run.sh /app/bin/run.sh
     cleanup: []
     sources:
       - type: file
-        url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/com.qq.weixin.work.deepin.zip
-        sha256: 2202beb6b1b51defb32a17167d5f5ca608995349b3352959df2786b483603c93
+        url: file:///home/lxz/Downloads/tmp/com.qq.weixin.work.deepin/com.qq.weixin.work.deepin_3.1.12.6001deepin8_i386.deb
+#        url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/com.qq.weixin.work.deepin.tar.xz
+        sha256: 2898ebcc9b6081f41ebf9736fc2ae2e0f81d0ada0d88cc4792f22b2f145a87da
+      - type: file
+        url: https://github.com/justforlxz/com.qq.weixin.work.deepin/releases/download/1.0/patch.0
+        sha256: 96ec4305270c767db6ec81ef36ee068c219ac6cd0aac40c30699ea59726cc7fb
       - type: file
         path: ./install.sh
